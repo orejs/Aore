@@ -86,8 +86,5 @@
     "umi-presets-pro": "^1.0.5",
     "umi-serve": "^1.9.11",
     "vercel": "^28.5.3"
-  },
-  "engines": {
-    "node": ">=12.0.0"
   }
 }
