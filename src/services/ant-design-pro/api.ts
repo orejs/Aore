@@ -29,6 +29,9 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
     },
     data: body,
     ...(options || {}),
+  }).then((res) => {
+    window.localStorage.setItem('aore_token', res.token);
+    return res;
   });
 }
 

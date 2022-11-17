@@ -4,7 +4,7 @@ const handler = supabase()((req: VercelRequestWithUser, res) => {
   if (req.method == 'GET') {
     res.send({
       success: true,
-      data: req.user,
+      data: req.auth,
     });
     return;
   }

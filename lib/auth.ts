@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { expressjwt } from 'express-jwt';
 
 export type VercelRequestWithUser = VercelRequest & {
-  user?: unknown;
+  auth?: unknown;
 };
 
 interface ResponseShape {
@@ -21,8 +21,6 @@ function isPromise(r: any): r is Promise<unknown> {
 export function supabase() {
   const filter = expressjwt({
     algorithms: ['HS256'],
-    credentialsRequired: true,
-    audience: 'authenticated',
     secret: process.env.SECRET!,
   });
 
