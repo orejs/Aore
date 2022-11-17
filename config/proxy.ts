@@ -10,7 +10,13 @@
  * @doc https://umijs.org/docs/guides/proxy
  */
 export default {
-  dev: {},
+  dev: {
+    '/api/': {
+      target: 'https://localhost:3333',
+      changeOrigin: true,
+      pathRewrite: { '^': '' },
+    },
+  },
   /**
    * @name 详细的代理配置
    * @doc https://github.com/chimurai/http-proxy-middleware
