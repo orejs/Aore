@@ -12,7 +12,7 @@
 export default {
   dev: {
     '/api/': {
-      target: 'http://localhost:3333',
+      target: 'http://localhost:3030',
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },

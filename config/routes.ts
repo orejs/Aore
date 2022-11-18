@@ -50,6 +50,12 @@ export default [
     component: './TableList',
   },
   {
+    name: 'blog.table-list',
+    icon: 'table',
+    path: '/blog',
+    component: './Blog',
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
