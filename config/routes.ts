@@ -56,6 +56,24 @@ export default [
     component: './Blog',
   },
   {
+    name: 'resource.table-list',
+    icon: 'table',
+    path: '/resource',
+    component: './Resource',
+  },
+  {
+    name: 'tag.table-list',
+    icon: 'table',
+    path: '/tag',
+    component: './Tag',
+  },
+  {
+    name: 'setting.table-list',
+    icon: 'table',
+    path: '/setting',
+    component: './Setting',
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
