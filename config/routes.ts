@@ -27,6 +27,12 @@ export default [
     component: './Welcome',
   },
   {
+    name: 'blog.edit',
+    path: '/blog/:id',
+    component: './Blog/blog',
+    layout: false,
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
@@ -50,7 +56,7 @@ export default [
     component: './TableList',
   },
   {
-    name: 'blog.table-list',
+    name: 'blog',
     icon: 'table',
     path: '/blog',
     component: './Blog',

@@ -3,7 +3,8 @@ import { Link, history, request } from '@umijs/max';
 import { Modal, Form, Upload, message } from 'antd';
 import type { UploadChangeParam } from 'antd/es/upload';
 import { useControllableValue, useBoolean } from 'ahooks';
-import { ActionType, ProFormInstance, ProFormSwitch } from '@ant-design/pro-components';
+import type { ActionType, ProFormInstance } from '@ant-design/pro-components';
+import { ProFormSwitch } from '@ant-design/pro-components';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import {
@@ -27,7 +28,7 @@ interface IResource {
 
 interface CoverProps {
   value?: IResource;
-  onChange?(value: IResource): void;
+  onChange?: (value: IResource) => void;
 }
 
 const beforeUpload = (file: RcFile) => {
@@ -194,7 +195,7 @@ const Home = () => {
               >
                 {renderForm()}
               </ModalForm>,
-              <Link key="editable" to={`/admin/blog/${record._id}`}>
+              <Link key="editable" to={`/blog/${record._id}`}>
                 <a target="_blank">编辑内容</a>
               </Link>,
             ],
@@ -225,7 +226,7 @@ const Home = () => {
                 okText: '立刻编辑',
                 closable: true,
                 onOk() {
-                  history.push(`/admin/blog/${ret.id}`);
+                  history.push(`/blog/${ret.id}`);
                 },
                 onCancel() {
                   actionRef.current?.reload();

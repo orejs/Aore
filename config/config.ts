@@ -41,6 +41,7 @@ export default defineConfig({
     // 只有设置为 variable， 才能使用 configProvide 动态设置主色调
     'root-entry-name': 'variable',
   },
+
   /**
    * @name moment 的国际化配置
    * @description 如果对国际化没有要求，打开之后能减少js的包大小
@@ -80,6 +81,7 @@ export default defineConfig({
     locale: true,
     ...defaultSettings,
   },
+
   /**
    * @name 国际化插件
    * @doc https://umijs.org/docs/max/i18n
@@ -91,6 +93,7 @@ export default defineConfig({
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
   },
+
   /**
    * @name antd 插件
    * @description 内置了 babel import 插件
@@ -124,13 +127,16 @@ export default defineConfig({
       schemaPath: join(__dirname, 'oneapi.json'),
       mock: false,
     },
+
     {
       requestLibPath: "import { request } from '@umijs/max'",
       schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/CA1dOm%2631B/openapi.json',
       projectName: 'swagger',
     },
   ],
+
   mfsu: {
-    exclude :['@playwright/test']
+    exclude: ['@playwright/test'],
   },
+  tailwindcss: {},
 });
